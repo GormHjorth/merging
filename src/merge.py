@@ -13,7 +13,7 @@ def merge(x:list[int], y:list[int]) -> list[int]:
     i = 0
     j = 0
 
-    while i <= len(x) or j <= len(y):   #Keeps going until both lists have reached the last value
+    while i < len(x) or j < len(y):   #Keeps going until both lists have reached the last value
         if x[i] < y[j]:  # If the value of the placement in the x-list is smaller than the current placement in the y-list, then we append the current x-list value
             z.append(x[i]) 
             i += 1    #And count up 1 for the x-list related value, i, so we now check the next value
