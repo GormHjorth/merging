@@ -5,7 +5,11 @@ def merge(x:list[int], y:list[int]) -> list[int]:
     x = sorted(x)  #Sorting both lists prior to running
     y = sorted(y)
     z = []
-
+    
+    if not x:
+        return y
+    if not y:
+        return x
     i = 0
     j = 0
 
