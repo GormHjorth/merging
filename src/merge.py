@@ -1,22 +1,19 @@
 """Code for merging two sorted lists."""
 
 
-def merge(x: list[int], y: list[int]) -> list[int]:
-    """
-    Merge two sorted lists.
+def merge(x:list[int], y: list[int]) -> list[int]:
+    x = sorted(x)  #Sorting both lists prior to running
+    y = sorted(y)
+    z = []
 
-    Returns a list that contains all the elements in x and y
-    in sorted order.
+    i = 0
+    j = 0
 
-    >>> merge([1, 2, 4, 6], [1, 3, 4, 5])
-    [1, 1, 2, 3, 4, 4, 5, 6]
-    """
-    i, j = 0, 0
-    z = []  # a new list to copy elements into
-    # FIXME: fill out the loop so you merge the lists
-    # until one of them is empty
-    while i < len(x) and j < len(y):
-        break  # FIXME: you shouldn't just break here
-    # At least one of the lists is empty now. Copy the
-    # remainder of the other into z.
-    return z
+    while i < len(x) and j < len(y):   #Keeps going until both lists have reached the last value
+        if x[i] < y[j]:  # If the value of the placement in the x-list is smaller than the current placement in the y-list, then we append the current x-list value
+            z.append(x[i]) 
+            i += 1    #And count up 1 for the x-list related value, i, so we now check the next value
+        elif x[i] >= y[j]:  #If the value of x[i] is bigger (or equal to) y[j], then we append y[j]
+            z.append(y[j])
+            j += 1  #And count up 1 for the y-list related value
+    return(z)
