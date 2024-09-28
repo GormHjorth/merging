@@ -5,10 +5,6 @@ def merge(x:list[int], y:list[int]) -> list[int]:
     y = sorted(y)
     z = []
 
-    # if not x:
-    #     return y
-    # if not y:
-    #     return x
     i = 0
     j = 0
 
@@ -21,9 +17,9 @@ def merge(x:list[int], y:list[int]) -> list[int]:
             z.append(y[j])
             j += 1  #And count up 1 for the y-list related value
 
-    if i >= len(x):
+    if i >= len(x):     #check if it was the x list that reached its end first and if so, appends the rest of the y list (extend not append, if using append then it adds as a seperate list)
         z.extend(y[j:len(y)])
-    elif j >= len(y):
+    elif j >= len(y):   #Same as with the x list, but now with the y list
         z.extend(x[i:len(x)])
     
     return(z)
